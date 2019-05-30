@@ -105,10 +105,14 @@ function Server_AdvanceTurn_Order(game, order, result, skipThisOrder, addNewOrde
 		if (result.ActualArmies.NumArmies > 0) then 
 			recalculateOrder(game, order, result)
 			addNewOrder(WL.GameOrderCustom.Create(order.PlayerID, commanderName .. " send his army for certain death, staying himself safely in base", "")) 	
-			addNewOrder(WL.GameOrderCustom.Create(defendingTerritory.OwnerPlayerID, commanderName .. " send his army for certain death, staying himself safely in base", "")) 	
+			if not defendingTerritory.IsNeutral then 
+				addNewOrder(WL.GameOrderCustom.Create(defendingTerritory.OwnerPlayerID, commanderName .. " send his army for certain death, staying himself safely in base", "")) 	
+			end
 		else
 			addNewOrder(WL.GameOrderCustom.Create(order.PlayerID, commanderName .. " refuses to attack overwhelming enemy and die", "")) 	
-			addNewOrder(WL.GameOrderCustom.Create(defendingTerritory.OwnerPlayerID, commanderName .. " refuses to attack overwhelming enemy and die", "")) 		
+			if not defendingTerritory.IsNeutral then 
+				addNewOrder(WL.GameOrderCustom.Create(defendingTerritory.OwnerPlayerID, commanderName .. " refuses to attack overwhelming enemy and die", "")) 		
+			end
 		end
 	end
 	if defendingCommanderDies then
