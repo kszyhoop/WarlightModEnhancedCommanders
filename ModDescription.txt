@@ -1,2 +1,2 @@
-Commanders try to survive even if whole army is killed.
-Commander gives also bigger bonus to his stack (kill ratio multiplier)
+Mod that allows to customize commander strength and kill rates.
+It also make them harder to kill, as commanders won't engage into lost battles (defending commanders will flee instead of get killed and attacking commanders won't go along with their army if defenders are too strong)
