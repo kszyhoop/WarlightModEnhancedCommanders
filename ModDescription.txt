@@ -1,0 +1,2 @@
+Commanders try to survive even if whole army is killed.
+Commander gives also bigger bonus to his stack (kill ratio multiplier)
