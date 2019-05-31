@@ -1,3 +1,7 @@
+function Server_AdvanceTurn_Start(game, addNewOrder)
+	
+end
+
 CopiedActualArmies = nil;
 UseCopiedActualArmies = false;
 ForceTransferAll = false;
