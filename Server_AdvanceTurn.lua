@@ -23,7 +23,7 @@ function recalculateOrder(game, order, result)
 		attackPower = result.ActualArmies.AttackPower;
 	end;
 
-	local defendingUnitsToKill = attackPower * killRate;  -- TODO: luck and rounding mode
+	local defendingUnitsToKill = math.floor(attackPower * killRate + 0.5);  -- TODO: luck and rounding mode
 
 	if (defendingCommanderPresent) then
 		killRate = Mod.Settings.CommanderDefenseKillRate / 100;
@@ -33,7 +33,7 @@ function recalculateOrder(game, order, result)
 		defensePower = defendingTerritory.NumArmies.DefensePower;
 	end;
 	
-	local attackingUnitsToKill = defensePower * killRate -- TODO: luck and roundingMode;
+	local attackingUnitsToKill = math.floor(defensePower * killRate + 0.5) -- TODO: luck and roundingMode;
 	
 	if (attackingCommanderPresent and attackingUnitsToKill >= attackPower) then	
 		result.AttackingArmiesKilled = WL.Armies.Create(math.min(attackingUnitsToKill, result.ActualArmies.NumArmies), {result.ActualArmies.SpecialUnits[1]});
