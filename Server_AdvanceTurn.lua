@@ -1,4 +1,4 @@
-﻿CopiedActualArmies = nil;
+CopiedActualArmies = nil;
 UseCopiedActualArmies = false;
 ForceTransferAll = false;
 
